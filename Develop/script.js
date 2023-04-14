@@ -6,21 +6,113 @@
 
 $(document).ready(function  () {
   
-  //added in Current day to header
-  var dateEl = $('#currentDay');
-  var today = dayjs();
-  $('#currentDay').text(today.format('dddd, MMMM D'));
+//added in Current day to header of page
+var today = dayjs();
+$('#currentDay').text(today.format('dddd, MMMM D'));
 
   //added hourblocks to an array
 var hourBlocks = [ 'hour-9', 'hour-10', 'hour-11', 'hour-12', 'hour-1pm', 'hour-2pm', 'hour-3pm', 'hour-4pm', 'hour-5pm'];
 
-//convert saveBtns into variables to use
-var saveBtn = $('.saveBtn')
+//save'saveBtn' as a variable to be used
+var saveBtn = $('.saveBtn');
+
+//save timeblocks into single variables for each input into text area elements
+var hour9Input = $('#hour-9 .description');
+var hour10Input = $('#hour-10 .description');
+var hour11Input = $('#hour-11 .description');
+var hour12Input = $('#hour-12 .description');
+var hour1Input = $('#hour-1 .description');
+var hour2Input = $('#hour-2 .description');
+var hour3Input = $('#hour-3 .description');
+var hour4Input = $('#hour-4 .description');
+var hour5Input = $('#hour-5 .description');
 
 
 
+//Event listener for clicking hour9 save button
+saveBtn.on('click', function(event) {
+event.preventDefault();
+hour9Val = hour9Input.val();
+console.log(hour9Val);
+//set item into localstorage
+localStorage.setItem("hour9", hour9Val);
+});
 
 
+//Event listener for clicking hour10 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour10Val = hour10Input.val();
+  console.log(hour10Val);
+  //set item into localstorage
+  localStorage.setItem("hour10", hour10Val);
+  });
+
+  //Event listener for clicking hour11 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour11Val = hour11Input.val();
+  console.log(hour11Val);
+  //set item into localstorage
+  localStorage.setItem("hour11", hour11Val);
+  });
+
+
+  //Event listener for clicking hour12 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour12Val = hour12Input.val();
+  console.log(hour12Val);
+  //set item into localstorage
+  localStorage.setItem("hour12", hour12Val);
+  });
+
+
+  //Event listener for clicking hour1 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour1Val = hour1Input.val();
+  console.log(hour1Val);
+  //set item into localstorage
+  localStorage.setItem("hour1", hour1Val);
+  });
+
+  //Event listener for clicking hour2 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour2Val = hour2Input.val();
+  console.log(hour2Val);
+  //set item into localstorage
+  localStorage.setItem("hour2", hour2Val);
+  });
+
+//Event listener for clicking hour3 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour3Val = hour3Input.val();
+  console.log(hour3Val);
+  //set item into localstorage
+  localStorage.setItem("hour3", hour3Val);
+  });
+
+  //Event listener for clicking hour4 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour4Val = hour4Input.val();
+  console.log(hour4Val);
+  //set item into localstorage
+  localStorage.setItem("hour4", hour4Val);
+  });
+
+  //Event listener for clicking hour5 save button
+saveBtn.on('click', function(event) {
+  event.preventDefault();
+  hour5Val = hour5Input.val();
+  console.log(hour5Val);
+  //set item into localstorage
+  localStorage.setItem("hour5", hour5Val);
+  });
+//
 
 
   // TODO: Add a listener for click events on the save button. This code should
