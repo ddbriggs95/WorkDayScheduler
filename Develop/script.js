@@ -1,4 +1,3 @@
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -9,9 +8,6 @@ $(document).ready(function  () {
 //added in Current day to header of page
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D'));
-
-  //added hourblocks to an array
-var hourBlocks = [ 'hour-9', 'hour-10', 'hour-11', 'hour-12', 'hour-1pm', 'hour-2pm', 'hour-3pm', 'hour-4pm', 'hour-5pm'];
 
 //save'saveBtn' as a variable to be used
 var saveBtn = $('.saveBtn');
@@ -26,7 +22,7 @@ var hour2Input = $('#hour-2 .description');
 var hour3Input = $('#hour-3 .description');
 var hour4Input = $('#hour-4 .description');
 var hour5Input = $('#hour-5 .description');
-
+var timeBlock = $(".time-block");
 
 
 //Event listener for clicking hour9 save button
@@ -34,6 +30,24 @@ saveBtn.on('click', function(event) {
 event.preventDefault();
 hour9Val = hour9Input.val();
 console.log(hour9Val);
+
+var currentHour = dayjs().format('HH');
+var hour9 = $('hour9');
+console.log(currentHour);
+if(currentHour == 9) {
+  hour9.removeClass('past');
+  hour9.removeClass('future');
+  hour9.addClass('present');
+} else if (currentHour > 9) {
+  hour9.removeClass('present');
+  hour9.removeClass('future');
+  hour9.addClass('past');
+} else if (currentHour < 9) {
+  hour9.removeClass('past');
+  hour9.removeclass('present');
+  hour9.addClass('future');
+}
+
 //set item into localstorage
 localStorage.setItem("hour9", hour9Val);
 });
@@ -112,7 +126,12 @@ saveBtn.on('click', function(event) {
   //set item into localstorage
   localStorage.setItem("hour5", hour5Val);
   });
-//
+
+//set up past,present,future textarea through comparing to currentHour
+
+
+
+  //
 
 
   // TODO: Add a listener for click events on the save button. This code should
