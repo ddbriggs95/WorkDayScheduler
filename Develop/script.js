@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-
 $(document).ready(function  () {
   
 //added in Current day to header of page
